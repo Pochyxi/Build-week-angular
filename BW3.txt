@@ -1,0 +1,23 @@
+Creare un sito per la visualizzazione e gestione di post
+
+- Nella home page visualizzare una lista di post (con relativo autore),
+- se si è autenticati i post dell'utente avranno un aspetto diverso e avranno un tasto dettagli
+
+- Pagine autenticazione (signup/login) e funzione di logout
+- I form devono avere validazione e messaggi di errore in caso gli input non fossero validi
+.touched .valid/.invalid
+- Per registrarsi è richiesta
+    - mail
+    - password
+    - ripetere la password
+    - nome e congome
+    - età
+    - username
+- Impostare auto login all'avvio se il token è salvato e auto logout quando il token scade (usare JWT Helper Service)
+
+- Una volta autenticati sarannno disponibili le seguenti pagine e funzionalità
+
+- Post dell'utente: lista post utente
+- Pagina impostazioni utente: pagina info utente e possibilità di modificare i dati non essenziali (nome, cognome, età, username)
+- Pagina dettagli post: ogni post ha un pulsante per visualizzare i dettagli, questi devono essere visulaizzati in una pagina dedicata. Da questa pagina è possibile modificare o eliminare il post se siamo loggati ed è un post del nostro utente
+- Pagina creazione post

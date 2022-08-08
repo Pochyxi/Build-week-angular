@@ -1,0 +1,13 @@
+
+{
+    "/api/*": "/$1",
+    "/posts/": "/posts",
+    "/posts/:id": "/posts/:id",
+    "/posts/manage/:userId": "/posts?autore=:userId",
+    "/comments/": "/comments",
+    "/posts/:id/comments/": "/comments?postID=:idPost",
+    "/users/": "/users",
+    "/users/:id": "/users?id=:id",
+    "posts": 664,
+    "comments": 664
+}

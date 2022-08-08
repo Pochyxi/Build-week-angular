@@ -1,0 +1,57 @@
+<div class="container w-50 h-50 p-3 mt-5">
+  <form [formGroup]="form" (ngSubmit)="signup()">
+    <label class="form-label" for="nome">Nome</label>
+    <input
+      class="form-control"
+      formControlName="nome"
+      type="text"
+      id="nome"
+      placeholder="inserisci il tuo nome"
+    /><br />
+    <label class="form-label" for="username">Username</label>
+    <input
+      class="form-control"
+      formControlName="username"
+      type="text"
+      id="username"
+      placeholder="Username"
+    /><br />
+    <label class="form-label" for="eta">La tua età</label>
+    <input
+      class="form-control"
+      formControlName="eta"
+      type="number"
+      id="eta"
+      placeholder="Età"
+    /><br />
+    <label class="form-label" for="email">Email</label>
+    <input
+      class="form-control"
+      formControlName="email"
+      type="email"
+      id="email"
+      placeholder="email"
+    /><br />
+    <label class="form-label" for="password">Password</label>
+    <input
+      class="form-control"
+      formControlName="password"
+      type="password"
+      id="password"
+      placeholder="Password"
+    /><span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long. </span
+    ><br />
+    <label class="form-label" for="conferma">Conferma password</label>
+    <input
+      class="form-control"
+      formControlName="conferma"
+      type="password"
+      id="conferma"
+      placeholder="Conferma"
+    /><span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long. </span
+    ><br />
+    <button class="btn btn-success w-100" type="submit">Registrati</button>
+  </form>
+</div>

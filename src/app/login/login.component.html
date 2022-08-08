@@ -1,0 +1,25 @@
+<div class="container w-50 h-50 p-3 mt-5">
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <label class="form-label" for="email">Email</label>
+    <input
+      class="form-control"
+      formControlName="email"
+      type="email"
+      id="email"
+      placeholder="email"
+    /><br />
+    <label class="form-label" for="password">Password</label>
+    <input
+      class="form-control"
+      formControlName="password"
+      type="password"
+      id="password"
+      placeholder="Password"
+    /><span id="passwordHelpInline" class="form-text">
+      Must be 8-20 characters long. </span
+    ><br />
+    <button [routerLink]="['/']" class="btn btn-success w-100" type="submit">
+      LOGIN
+    </button>
+  </form>
+</div>

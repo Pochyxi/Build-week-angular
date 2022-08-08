@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": 0,
+      "autore": 0,
+      "title": "test",
+      "body": "lorem ipsum dolor"
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "idPost": 0,
+      "idUser": 0,
+      "body": "lorem ipsum dolor"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "username": "test",
+      "email": "test@test.test",
+      "password": "???",
+      "name": "Test test",
+      "age": 20
+    },
+    {
+      "email": "123@123.123",
+      "password": "$2a$10$qNF3f65SpwRXeUZ24y1NYO2i24/t6UzdjrrLS7gLzcA90D64n7poy",
+      "nome": "123123123",
+      "username": "123123123",
+      "eta": 1,
+      "conferma": "123123123",
+      "id": 1
+    }
+  ]
+}
