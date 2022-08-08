@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Posts } from '../posts';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-post-card',
   templateUrl: './post-card.component.html',
-  styleUrls: ['./post-card.component.scss']
+  styleUrls: ['./post-card.component.scss'],
 })
 export class PostCardComponent implements OnInit {
+  @Input() p!: Posts;
 
-  constructor() { }
+  @Output() shotId = new EventEmitter<number>();
 
-  ngOnInit(): void {
+  constructor(private post$: PostsService) {}
+
+  ngOnInit(): void {}
+  delete() {
+    this.post$.deletePost(this.p.id);
+    this.shotId.emit(this.p.id);
   }
-
 }

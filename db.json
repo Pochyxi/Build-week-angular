@@ -1,10 +1,16 @@
 {
   "posts": [
     {
-      "id": 0,
-      "autore": 0,
-      "title": "test",
-      "body": "lorem ipsum dolor"
+      "id": 1,
+      "autore": "1",
+      "title": "adien",
+      "body": "er"
+    },
+    {
+      "id": 2,
+      "autore": "1",
+      "title": "pablo",
+      "body": "escboar"
     }
   ],
   "comments": [

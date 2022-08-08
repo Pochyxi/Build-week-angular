@@ -1,1 +1,12 @@
-<p>post-card works!</p>
+<div class="card text-center mt-5">
+  <div>ID:{{ p.id }}</div>
+  <div class="card-header">{{ p.autore }}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ p.title }}</h5>
+    <p class="card-text">
+      {{ p.body }}
+    </p>
+    <a (click)="delete()" class="btn btn-danger">DELETE</a>
+  </div>
+  <div class="card-footer text-muted">2 days ago</div>
+</div>
