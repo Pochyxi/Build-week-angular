@@ -1,0 +1,15 @@
+LUNEDI
+// PRESENZE
+1. Adiener
+2. Giandomenico
+3. Luca Trimboli
+4. Chiara
+
+TABELLA DI MARCIA
+1. Definizione del progetto su figma.
+    a) layout grafico di partenza
+    b) sezione per utente sloggato e loggato
+
+2. Creazione dell'interfaccia per l'autenticazione ed i vari componenti
+3. Implementazione di Bootstrap e creazione delle sezioni login, signup e Home
+4. Implementazione della funzionalità crea post ed elimina posts.
