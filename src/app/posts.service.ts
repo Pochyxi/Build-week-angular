@@ -9,28 +9,24 @@ import { Posts } from './posts';
 export class PostsService {
   url = 'http://localhost:3000/posts/';
 
-  arrayPosts: Posts[] = [];
-
   sub = new Subject<Posts[]>();
   obs = this.sub.asObservable();
 
   constructor(private http: HttpClient) {}
 
   getPosts() {
-    this.http.get<Posts[]>(this.url).subscribe((posts) => {
-      this.arrayPosts = posts;
-      this.sub.next(this.arrayPosts);
-    });
+    return this.http.get<Posts[]>(this.url);
   }
+
   newPost(object: any) {
-    this.http.post<Posts>(this.url, object).subscribe(() => {
-      this.arrayPosts.push(object);
-    });
+    return this.http.post<Posts>(this.url, object);
   }
 
   deletePost(id: number) {
-    this.http.delete<Posts>(this.url + id).subscribe(() => {
-      this.arrayPosts = this.arrayPosts.filter((post) => post.id != id);
-    });
+    return this.http.delete<Posts>(this.url + id);
+  }
+
+  modifyPost(obj: Posts) {
+    return this.http.patch<Posts>(this.url + obj.id, obj);
   }
 }

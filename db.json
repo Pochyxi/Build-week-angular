@@ -2,15 +2,17 @@
   "posts": [
     {
       "id": 1,
-      "autore": "1",
-      "title": "adien",
-      "body": "er"
+      "autore": 1,
+      "autorname": "BUDKASPLIT()===D",
+      "title": "123123",
+      "body": "123123"
     },
     {
       "id": 2,
-      "autore": "1",
-      "title": "pablo",
-      "body": "escboar"
+      "autore": 1,
+      "autorname": "BUDKASPLIT()===D",
+      "title": "asdasd",
+      "body": "asdasdasd"
     }
   ],
   "comments": [
@@ -23,20 +25,11 @@
   ],
   "users": [
     {
-      "id": 0,
-      "username": "test",
-      "email": "test@test.test",
-      "password": "???",
-      "name": "Test test",
-      "age": 20
-    },
-    {
       "email": "123@123.123",
-      "password": "$2a$10$qNF3f65SpwRXeUZ24y1NYO2i24/t6UzdjrrLS7gLzcA90D64n7poy",
-      "nome": "123123123",
-      "username": "123123123",
-      "eta": 1,
-      "conferma": "123123123",
+      "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+      "nome": "123",
+      "username": "BUDKASPLIT()===D",
+      "eta": 123,
       "id": 1
     }
   ]

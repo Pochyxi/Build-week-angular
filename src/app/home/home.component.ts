@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { Posts } from '../posts';
 import { PostsService } from '../posts.service';
+import { UserService } from '../user.service';
+import { User } from '../users';
 
 @Component({
   selector: 'app-home',
@@ -12,17 +13,19 @@ import { PostsService } from '../posts.service';
 })
 export class HomeComponent implements OnInit {
   posts: Posts[] = [];
+  arrayUsers: User[] = [];
+
+  logged!: boolean;
+
+  confirm: boolean = false;
 
   form!: FormGroup;
-
-  sub!: Subscription;
-
-  val: string = '';
 
   constructor(
     private auth$: AuthService,
     private posts$: PostsService,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private users$: UserService
   ) {
     this.form = this.fb.group({
       title: ['', Validators.required],
@@ -31,10 +34,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts$.getPosts();
-    this.sub = this.posts$.obs.subscribe((res) => {
-      this.posts = res;
-      console.log(this.posts);
+    this.posts$.getPosts().subscribe((post) => {
+      this.posts = post;
+      this.logged = this.auth$.isLogged();
+      console.log(this.logged);
+    });
+    this.users$.getUsers().subscribe((users) => {
+      this.arrayUsers = users;
     });
   }
 
@@ -43,12 +49,13 @@ export class HomeComponent implements OnInit {
   }
 
   addPost() {
-    let aut = localStorage.getItem('id');
+    let aut: any = localStorage.getItem('id');
 
-    let obj = {
+    let obj: any = {
       id:
         this.posts.length === 0 ? 1 : this.posts[this.posts.length - 1].id + 1,
-      autore: aut,
+      autore: parseInt(aut),
+      autorname: this.arrayUsers.find((u) => u.id == aut)?.username,
       title: this.getFormControl('title')?.value,
       body: this.getFormControl('body')?.value,
     };
@@ -62,12 +69,22 @@ export class HomeComponent implements OnInit {
       title: '',
       body: '',
     });
+    this.posts$.newPost(obj).subscribe(() => {
+      this.posts.push(obj);
+    });
   }
-  deletePost(id: number) {
-    this.posts = this.posts.filter((post) => post.id != id);
-    console.log(this.posts);
+
+  deletePost(obj: Posts) {
+    this.posts$.deletePost(obj.id).subscribe(() => {
+      this.posts = this.posts.filter((post) => post.id != obj.id);
+      console.log(this.posts);
+    });
   }
-  ngOnDestroy() {
-    this.sub.unsubscribe();
+  modify(obj: Posts) {
+    this.posts$.modifyPost(obj).subscribe(() => {
+      this.posts$.getPosts().subscribe((res) => {
+        this.posts = res;
+      });
+    });
   }
 }

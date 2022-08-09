@@ -1,1 +1,6 @@
-<p>my-posts works!</p>
+<app-post-card
+  *ngFor="let post of myPosts; index as i"
+  [p]="post"
+  (shotId)="deletePost($event)"
+  (shotobj)="modify($event)"
+></app-post-card>

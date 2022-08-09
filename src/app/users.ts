@@ -6,8 +6,8 @@ export interface UserSignup {
   username: string;
   email: string;
   password: string;
-  name: string;
-  age: number;
+  nome: string;
+  eta: number;
 }
 
 export interface AuthUser {
@@ -19,4 +19,12 @@ export interface AuthUser {
 export interface AuthResponse {
   accessToken: string;
   user: AuthUser;
+}
+export interface User {
+  username: string;
+  email: string;
+  password: string;
+  nome: string;
+  eta: number;
+  id: number;
 }

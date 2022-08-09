@@ -1,0 +1,13 @@
+CLONARE una repository da GITHUB
+
+Vai su github.
+-Entra nella repository che ti interessa
+-Vai su code (tasto in verde)
+-Invece di scaricare lo zip, prendi l'url del HTTPS e copialo
+
+Vai su VSC e apri una cartella vuota
+// nuovo terminale
+-git clone "LINK HTTPS copiato"
+-npm install (per installare tutti i node modules)
+-npm init (per inizializzare tutta la cartella)
+-json-server-auth db.json (se non funziona npm install -D json-server json-server-auth e poi ripetere il primo comando)

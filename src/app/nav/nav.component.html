@@ -37,6 +37,7 @@
               class="nav-link active"
               [routerLink]="['/signup']"
               aria-current="page"
+              *ngIf="!isLogged"
               >SIGNUP</a
             >
           </li>
@@ -45,8 +46,23 @@
               class="nav-link active"
               [routerLink]="['/login']"
               aria-current="page"
+              *ngIf="!isLogged"
               >LOGIN</a
             >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              [routerLink]="['/myposts']"
+              aria-current="page"
+              *ngIf="isLogged"
+              >MyPosts</a
+            >
+          </li>
+          <li>
+            <button class="btn btn-danger" (click)="logout()" *ngIf="isLogged">
+              Logout
+            </button>
           </li>
         </ul>
       </div>

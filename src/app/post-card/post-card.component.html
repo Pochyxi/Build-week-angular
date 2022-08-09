@@ -1,12 +1,73 @@
 <div class="card text-center mt-5">
-  <div>ID:{{ p.id }}</div>
-  <div class="card-header">{{ p.autore }}</div>
+  <div class="card-header">Author: {{ p.autorname }}</div>
   <div class="card-body">
     <h5 class="card-title">{{ p.title }}</h5>
     <p class="card-text">
       {{ p.body }}
     </p>
-    <a (click)="delete()" class="btn btn-danger">DELETE</a>
+    <div *ngIf="p.autore == id">
+      <a class="btn btn-danger" (click)="deletePressed = !deletePressed"
+        >DELETE</a
+      >
+      <a (click)="openForm()" class="btn btn-primary">{{
+        modifyFlag == true ? "ANNULLA" : "MODIFY"
+      }}</a>
+    </div>
+    <div *ngIf="deletePressed" id="modal">
+      <h3>Sei sicuro?</h3>
+      <div>
+        <button
+          class="btn btn-danger"
+          (click)="delete(); deletePressed = !deletePressed"
+        >
+          Sì, cazzo
+        </button>
+        <button
+          class="btn btn-primary"
+          (click)="deletePressed = !deletePressed"
+        >
+          No, sono un coglione
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-comment></app-comment>
+  <div>
+    <form
+      *ngIf="modifyFlag"
+      [formGroup]="form"
+      (ngSubmit)="modify()"
+      class="mt-5 p-3"
+    >
+      <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
+      <input
+        formControlName="title"
+        class="w-100"
+        type="text"
+        id="titolo"
+      /><br />
+      <label
+        class="text-center"
+        for="exampleFormControlTextarea1"
+        class="form-label"
+        >Modifica post</label
+      >
+
+      <textarea
+        formControlName="body"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+
+      <button
+        class="btn btn-primary w-100 mt-1"
+        type="submit"
+        (click)="modify()"
+      >
+        Modifica
+      </button>
+    </form>
   </div>
   <div class="card-footer text-muted">2 days ago</div>
 </div>

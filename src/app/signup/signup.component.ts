@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { UserSignup } from '../users';
 
 @Component({
   selector: 'app-signup',
@@ -52,7 +53,14 @@ export class SignupComponent implements OnInit {
       if (!this.form.valid) {
         console.log('not valid');
       } else {
-        this.auth$.signUp(this.form.value);
+        let obj: UserSignup = {
+          email: this.getFormControl('email')?.value,
+          password: this.getFormControl('password')?.value,
+          nome: this.getFormControl('nome')?.value,
+          username: this.getFormControl('username')?.value,
+          eta: this.getFormControl('eta')?.value,
+        };
+        this.auth$.signUp(obj);
         console.log(this.form.value);
       }
     } else {
