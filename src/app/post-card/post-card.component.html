@@ -1,5 +1,7 @@
 <div class="card text-center mt-5">
-  <div class="card-header">Author: {{ p.autorname }}</div>
+  <div class="card-header">
+    Author: {{ p.autorname }} LIKES: {{ p.likes.length }}
+  </div>
   <div class="card-body">
     <h5 class="card-title">{{ p.title }}</h5>
     <p class="card-text">
@@ -9,10 +11,16 @@
       <a class="btn btn-danger" (click)="deletePressed = !deletePressed"
         >DELETE</a
       >
-      <a (click)="openForm()" class="btn btn-primary">{{
+      <a (click)="openForm()" class="btn btn-primary mx-2">{{
         modifyFlag == true ? "ANNULLA" : "MODIFY"
       }}</a>
     </div>
+    <a *ngIf="isLogged" (click)="like()" class="btn btn-primary mx-2">{{
+      !this.likeFlag ? "LIKE" : "DISLIKE"
+    }}</a>
+    <a (click)="commentiFlag = !commentiFlag" class="btn btn-success my-2"
+      >COMMENTI</a
+    >
     <div *ngIf="deletePressed" id="modal">
       <h3>Sei sicuro?</h3>
       <div>
@@ -31,7 +39,7 @@
       </div>
     </div>
   </div>
-  <app-comment></app-comment>
+
   <div>
     <form
       *ngIf="modifyFlag"
@@ -69,5 +77,7 @@
       </button>
     </form>
   </div>
-  <div class="card-footer text-muted">2 days ago</div>
+  <div class="card-footer">
+    <app-comment [post]="p" [commentiFlag]="commentiFlag"></app-comment>
+  </div>
 </div>

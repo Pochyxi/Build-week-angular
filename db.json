@@ -1,18 +1,140 @@
 {
   "posts": [
     {
-      "id": 1,
-      "autore": 1,
-      "autorname": "BUDKASPLIT()===D",
-      "title": "123123",
-      "body": "123123"
-    },
-    {
       "id": 2,
       "autore": 1,
-      "autorname": "BUDKASPLIT()===D",
-      "title": "asdasd",
-      "body": "asdasdasd"
+      "autorname": "BUDKASPLIT()",
+      "title": "123",
+      "body": "11111111111",
+      "likes": [],
+      "comments": [
+        {
+          "id": 4,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "non ci credo!",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 5,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet ",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 6,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "insomma il problema della nostra società",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 7,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "insomma il problema della nostra società",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 8,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "insomma il problema della nostra società",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 9,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "insomma il problema della nostra società",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 10,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "123123123",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 11,
+          "idPost": 2,
+          "idUser": 3,
+          "body": "ciao budka!!",
+          "authorname": "ImmaFetaiol"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "waka waka tiki taka",
+      "body": "budka è budka era",
+      "likes": [],
+      "comments": [
+        {
+          "id": 3,
+          "idPost": 3,
+          "idUser": 1,
+          "body": "11111111",
+          "authorname": "BUDKASPLIT()"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "",
+      "body": "",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 5,
+      "autore": 2,
+      "autorname": "Marco Polo",
+      "title": "Piacere Marco",
+      "body": "Ciao tutti sono Marco ed il mio hobby preferito è giocare a \"Polo\"",
+      "likes": [
+        {
+          "email": "123@123.123",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "123",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "idPost": 5,
+          "idUser": 1,
+          "body": "Ciao marco piacere sono budka :)",
+          "authorname": "BUDKASPLIT()"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "autore": 3,
+      "autorname": "ImmaFetaiol",
+      "title": "Piacere",
+      "body": "Ciao a tutti sono immolettina",
+      "likes": [
+        {
+          "email": "123@123.123",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "123",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1
+        }
+      ],
+      "comments": []
     }
   ],
   "comments": [
@@ -28,9 +150,25 @@
       "email": "123@123.123",
       "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
       "nome": "123",
-      "username": "BUDKASPLIT()===D",
+      "username": "BUDKASPLIT()",
       "eta": 123,
       "id": 1
+    },
+    {
+      "email": "marcopolo@gmail.com",
+      "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+      "nome": "123123123",
+      "username": "Marco Polo",
+      "eta": 405,
+      "id": 2
+    },
+    {
+      "email": "immolettina@gmail.com",
+      "password": "$2a$10$5gdq8smkTJKpHiHhY6PXzegp4QjQB9Y2CGvPWtEn1FBGCc0SOi/sq",
+      "nome": "Imma",
+      "username": "ImmaFetaiol",
+      "eta": 26,
+      "id": 3
     }
   ]
 }

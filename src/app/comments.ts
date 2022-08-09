@@ -3,5 +3,5 @@ export interface Comments {
   idPost: number;
   idUser: number;
   body: string;
-  authorname: string;
+  authorname: string | undefined;
 }

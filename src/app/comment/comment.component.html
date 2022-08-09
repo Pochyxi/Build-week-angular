@@ -1,31 +1,59 @@
-<cdk-accordion class="example-accordion">
-  <cdk-accordion-item
-    *ngFor="let item of items; let index = index"
-    #accordionItem="cdkAccordionItem"
-    class="example-accordion-item"
-    role="button"
-    tabindex="0"
-    [attr.id]="'accordion-header-' + index"
-    [attr.aria-expanded]="accordionItem.expanded"
-    [attr.aria-controls]="'accordion-body-' + index"
-  >
-    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-      {{ item }}
-      <span class="example-accordion-item-description">
-        Click to {{ accordionItem.expanded ? "close" : "open" }}
-      </span>
-    </div>
-    <div
-      class="example-accordion-item-body"
-      role="region"
-      [style.display]="accordionItem.expanded ? '' : 'none'"
-      [attr.id]="'accordion-body-' + index"
-      [attr.aria-labelledby]="'accordion-header-' + index"
+<div *ngIf="commentiFlag">
+  <cdk-accordion class="example-accordion mx-auto">
+    <cdk-accordion-item
+      *ngFor="let item of post.comments; let index = index"
+      #accordionItem="cdkAccordionItem"
+      class="example-accordion-item"
+      role="button"
+      tabindex="0"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index"
     >
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-      excepturi incidunt ipsum deleniti labore, tempore non nam doloribus
-      blanditiis veritatis illo autem iure aliquid ullam rem tenetur deserunt
-      velit culpa?
-    </div>
-  </cdk-accordion-item>
-</cdk-accordion>
+      <div
+        class="example-accordion-item-header"
+        (click)="accordionItem.toggle()"
+      >
+        {{ item.authorname }}: {{ item.body | puntini }}
+        <span class="example-accordion-item-description">
+          Click to {{ accordionItem.expanded ? "close" : "open" }}
+        </span>
+      </div>
+      <div
+        class="example-accordion-item-body"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index"
+      >
+        {{ item.body }}
+        <div>
+          <button
+            type="button"
+            (click)="deleteComment()"
+            class="btn btn-danger"
+          >
+            Elimina commento
+          </button>
+        </div>
+      </div>
+    </cdk-accordion-item>
+  </cdk-accordion>
+  <form [formGroup]="form" class="mt-5 p-3" (ngSubmit)="addComment()">
+    <label
+      class="text-center"
+      for="exampleFormControlTextarea1"
+      class="form-label"
+      >Pubblica commento</label
+    >
+
+    <textarea
+      formControlName="body"
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+
+    <button class="btn btn-primary w-100 mt-1" type="submit">Pubblica</button>
+  </form>
+</div>

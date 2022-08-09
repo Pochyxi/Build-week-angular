@@ -58,6 +58,8 @@ export class HomeComponent implements OnInit {
       autorname: this.arrayUsers.find((u) => u.id == aut)?.username,
       title: this.getFormControl('title')?.value,
       body: this.getFormControl('body')?.value,
+      likes: [],
+      comments: [],
     };
     if (this.form.valid) {
       this.posts$.newPost(obj);

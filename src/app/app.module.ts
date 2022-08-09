@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptor } from './token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentComponent } from './comment/comment.component';
+import { PuntiniPipe } from './puntini.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CommentComponent } from './comment/comment.component';
     LoginComponent,
     SignupComponent,
     CommentComponent,
+    PuntiniPipe,
   ],
   imports: [
     BrowserModule,
