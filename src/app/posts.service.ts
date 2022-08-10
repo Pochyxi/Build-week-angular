@@ -9,8 +9,13 @@ import { Posts } from './posts';
 export class PostsService {
   url = 'http://localhost:3000/posts/';
 
+  postId = 0;
+
   sub = new Subject<Posts[]>();
   obs = this.sub.asObservable();
+
+  subId = new Subject<number>();
+  obsId = this.subId.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -28,5 +33,15 @@ export class PostsService {
 
   modifyPost(obj: Posts) {
     return this.http.patch<Posts>(this.url + obj.id, obj);
+  }
+  putPost(obj: Posts) {
+    return this.http.put<Posts>(this.url + obj.id, obj);
+  }
+  getSinglePost(id: number) {
+    return this.http.get<Posts[]>(this.url + id);
+  }
+  setPostId(id: number) {
+    this.postId = id;
+    this.subId.next(this.postId);
   }
 }

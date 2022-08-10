@@ -26,5 +26,5 @@ export interface User {
   password: string;
   nome: string;
   eta: number;
-  id: number;
+  id: number | string | null;
 }

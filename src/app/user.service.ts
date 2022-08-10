@@ -10,7 +10,7 @@ import { User } from './users';
   providedIn: 'root',
 })
 export class UserService {
-  url = 'http://localhost:3000/users';
+  url = 'http://localhost:3000/users/';
 
   sub = new Subject<User[]>();
   obs = this.sub.asObservable();
@@ -19,5 +19,9 @@ export class UserService {
 
   getUsers() {
     return this.http.get<User[]>(this.url);
+  }
+
+  modifyUsers(obj: any) {
+    return this.http.patch<User>(this.url + obj.id, obj);
   }
 }

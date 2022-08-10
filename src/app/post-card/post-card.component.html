@@ -1,24 +1,46 @@
-<div class="card text-center mt-5">
-  <div class="card-header">
-    Author: {{ p.autorname }} LIKES: {{ p.likes.length }}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{ p.title }}</h5>
-    <p class="card-text">
-      {{ p.body }}
-    </p>
-    <div *ngIf="p.autore == id">
-      <a class="btn btn-danger" (click)="deletePressed = !deletePressed"
-        >DELETE</a
-      >
-      <a (click)="openForm()" class="btn btn-primary mx-2">{{
+<div>
+  <mat-card class="example-card text-center mt-5">
+    <mat-card-title (click)="shotPostId()">
+      <a [routerLink]="['/post/', p.id]">{{ p.title }}</a>
+    </mat-card-title>
+    <mat-card-subtitle> Author: {{ p.autorname }} </mat-card-subtitle>
+    <mat-card-content>
+      <p class="card-text">
+        {{ p.body }}
+      </p>
+    </mat-card-content>
+
+    <button
+      class="buttonToggle"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item (click)="deletePressed = !deletePressed">DELETE</a>
+      <a mat-menu-item (click)="openForm()">{{
         modifyFlag == true ? "ANNULLA" : "MODIFY"
       }}</a>
-    </div>
-    <a *ngIf="isLogged" (click)="like()" class="btn btn-primary mx-2">{{
-      !this.likeFlag ? "LIKE" : "DISLIKE"
-    }}</a>
-    <a (click)="commentiFlag = !commentiFlag" class="btn btn-success my-2"
+    </mat-menu>
+
+    <mat-card-actions *ngIf="p.autore == id"> </mat-card-actions>
+    <a
+      mat-icon-button
+      [color]="colorHeart"
+      *ngIf="isLogged"
+      (click)="like()"
+      class="mx-2"
+      ><mat-icon>favorite</mat-icon></a
+    >
+    <a mat-button [matMenuTriggerFor]="likes" (click)="showLikes = !showLikes">
+      LIKES: {{ p.likes.length }}</a
+    >
+    <mat-menu class="px-3" #likes="matMenu">
+      <p *ngFor="let like of p.likes">-{{ like.username }}</p>
+    </mat-menu>
+    <a mat-button (click)="commentiFlag = !commentiFlag" class="my-2"
       >COMMENTI</a
     >
     <div *ngIf="deletePressed" id="modal">
@@ -38,46 +60,45 @@
         </button>
       </div>
     </div>
-  </div>
-
-  <div>
-    <form
-      *ngIf="modifyFlag"
-      [formGroup]="form"
-      (ngSubmit)="modify()"
-      class="mt-5 p-3"
-    >
-      <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
-      <input
-        formControlName="title"
-        class="w-100"
-        type="text"
-        id="titolo"
-      /><br />
-      <label
-        class="text-center"
-        for="exampleFormControlTextarea1"
-        class="form-label"
-        >Modifica post</label
+    <div>
+      <form
+        *ngIf="modifyFlag"
+        [formGroup]="form"
+        (ngSubmit)="modify()"
+        class="mt-5 p-3"
       >
+        <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
+        <input
+          formControlName="title"
+          class="w-100"
+          type="text"
+          id="titolo"
+        /><br />
+        <label
+          class="text-center"
+          for="exampleFormControlTextarea1"
+          class="form-label"
+          >Modifica post</label
+        >
 
-      <textarea
-        formControlName="body"
-        class="form-control"
-        id="exampleFormControlTextarea1"
-        rows="3"
-      ></textarea>
+        <textarea
+          formControlName="body"
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+        ></textarea>
 
-      <button
-        class="btn btn-primary w-100 mt-1"
-        type="submit"
-        (click)="modify()"
-      >
-        Modifica
-      </button>
-    </form>
-  </div>
-  <div class="card-footer">
-    <app-comment [post]="p" [commentiFlag]="commentiFlag"></app-comment>
-  </div>
+        <button
+          class="btn btn-primary w-100 mt-1"
+          type="submit"
+          (click)="modify()"
+        >
+          Modifica
+        </button>
+      </form>
+    </div>
+    <div class="card-footer">
+      <app-comment [post]="p" [commentiFlag]="commentiFlag"></app-comment>
+    </div>
+  </mat-card>
 </div>

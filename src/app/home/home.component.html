@@ -1,22 +1,47 @@
-<form *ngIf="logged" [formGroup]="form" (ngSubmit)="addPost()" class="mt-5 p-3">
-  <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
-  <input formControlName="title" class="w-100" type="text" id="titolo" /><br />
-  <label
-    class="text-center"
-    for="exampleFormControlTextarea1"
-    class="form-label"
-    >Pubblica post</label
+<div class="d-flex">
+  <button
+    (click)="formFlag = !formFlag"
+    mat-raised-button
+    color="primary"
+    class="mt-5 mx-auto"
   >
+    AGGIUNGI POST
+  </button>
+</div>
+<div *ngIf="formFlag">
+  <form
+    id="addPost"
+    *ngIf="logged"
+    [formGroup]="form"
+    (ngSubmit)="addPost()"
+    class="p-3"
+  >
+    <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
+    <input
+      formControlName="title"
+      class="w-100"
+      type="text"
+      id="titolo"
+    /><br />
+    <label
+      class="text-center"
+      for="exampleFormControlTextarea1"
+      class="form-label"
+      >Pubblica post</label
+    >
 
-  <textarea
-    formControlName="body"
-    class="form-control"
-    id="exampleFormControlTextarea1"
-    rows="3"
-  ></textarea>
+    <textarea
+      formControlName="body"
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
 
-  <button class="btn btn-primary w-100 mt-1" type="submit">Pubblica</button>
-</form>
+    <button mat-stroked-button color="primary" class="w-100 mt-1" type="submit">
+      Pubblica
+    </button>
+  </form>
+</div>
 
 <div class="p-3">
   <app-post-card

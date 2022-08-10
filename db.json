@@ -6,63 +6,53 @@
       "autorname": "BUDKASPLIT()",
       "title": "123",
       "body": "11111111111",
-      "likes": [],
+      "likes": [
+        {
+          "email": "marcopolo@gmail.com",
+          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+          "nome": "123123123",
+          "username": "Marco Polo",
+          "eta": 405,
+          "id": 2
+        },
+        {
+          "email": "immolettina@gmail.com",
+          "password": "$2a$10$5gdq8smkTJKpHiHhY6PXzegp4QjQB9Y2CGvPWtEn1FBGCc0SOi/sq",
+          "nome": "Imma",
+          "username": "ImmaFetaiol",
+          "eta": 26,
+          "id": 3
+        },
+        {
+          "email": "123@123.123",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "123",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1
+        }
+      ],
       "comments": [
-        {
-          "id": 4,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "non ci credo!",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 5,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet Lorem lore loremm ipsum dolor sit amet ",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 6,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "insomma il problema della nostra società",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 7,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "insomma il problema della nostra società",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 8,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "insomma il problema della nostra società",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 9,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "insomma il problema della nostra società",
-          "authorname": "BUDKASPLIT()"
-        },
-        {
-          "id": 10,
-          "idPost": 2,
-          "idUser": 1,
-          "body": "123123123",
-          "authorname": "BUDKASPLIT()"
-        },
         {
           "id": 11,
           "idPost": 2,
           "idUser": 3,
           "body": "ciao budka!!",
           "authorname": "ImmaFetaiol"
+        },
+        {
+          "id": 12,
+          "idPost": 2,
+          "idUser": 2,
+          "body": "ciao budka!!!",
+          "authorname": "Marco Polo"
+        },
+        {
+          "id": 13,
+          "idPost": 2,
+          "idUser": 1,
+          "body": "Non ha senso creare un post e scrivere 11111 scusa!",
+          "authorname": "BUDKASPLIT()"
         }
       ]
     },
@@ -72,7 +62,16 @@
       "autorname": "BUDKASPLIT()",
       "title": "waka waka tiki taka",
       "body": "budka è budka era",
-      "likes": [],
+      "likes": [
+        {
+          "email": "marcopolo@gmail.com",
+          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+          "nome": "123123123",
+          "username": "Marco Polo",
+          "eta": 405,
+          "id": 2
+        }
+      ],
       "comments": [
         {
           "id": 3,
@@ -84,21 +83,46 @@
       ]
     },
     {
-      "id": 4,
-      "autore": 1,
-      "autorname": "BUDKASPLIT()",
-      "title": "",
-      "body": "",
-      "likes": [],
-      "comments": []
-    },
-    {
       "id": 5,
       "autore": 2,
       "autorname": "Marco Polo",
       "title": "Piacere Marco",
       "body": "Ciao tutti sono Marco ed il mio hobby preferito è giocare a \"Polo\"",
       "likes": [
+        {
+          "email": "marcopolo@gmail.com",
+          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+          "nome": "123123123",
+          "username": "Marco Polo",
+          "eta": 405,
+          "id": 2
+        },
+        {
+          "email": "immolettina@gmail.com",
+          "password": "$2a$10$5gdq8smkTJKpHiHhY6PXzegp4QjQB9Y2CGvPWtEn1FBGCc0SOi/sq",
+          "nome": "Imma",
+          "username": "ImmaFetaiol",
+          "eta": 26,
+          "id": 3
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": 6,
+      "autore": 3,
+      "autorname": "ImmaFetaiol",
+      "title": "Piacere",
+      "body": "Ciao a tutti sono immolettina",
+      "likes": [
+        {
+          "email": "marcopolo@gmail.com",
+          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+          "nome": "123123123",
+          "username": "Marco Polo",
+          "eta": 405,
+          "id": 2
+        },
         {
           "email": "123@123.123",
           "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
@@ -111,29 +135,27 @@
       "comments": [
         {
           "id": 1,
-          "idPost": 5,
+          "idPost": 6,
           "idUser": 1,
-          "body": "Ciao marco piacere sono budka :)",
+          "body": "1111111",
+          "authorname": "BUDKASPLIT()"
+        },
+        {
+          "id": 2,
+          "idPost": 6,
+          "idUser": 1,
+          "body": "22222222",
           "authorname": "BUDKASPLIT()"
         }
       ]
     },
     {
-      "id": 6,
-      "autore": 3,
-      "autorname": "ImmaFetaiol",
-      "title": "Piacere",
-      "body": "Ciao a tutti sono immolettina",
-      "likes": [
-        {
-          "email": "123@123.123",
-          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
-          "nome": "123",
-          "username": "BUDKASPLIT()",
-          "eta": 123,
-          "id": 1
-        }
-      ],
+      "id": 7,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "Il mio dolore",
+      "body": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+      "likes": [],
       "comments": []
     }
   ],
@@ -147,17 +169,17 @@
   ],
   "users": [
     {
-      "email": "123@123.123",
+      "email": "budka@budka.budka",
       "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
-      "nome": "123",
+      "nome": "Budken",
       "username": "BUDKASPLIT()",
       "eta": 123,
       "id": 1
     },
     {
-      "email": "marcopolo@gmail.com",
+      "email": "marcopolonerd@gmail.com",
       "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-      "nome": "123123123",
+      "nome": "123123",
       "username": "Marco Polo",
       "eta": 405,
       "id": 2

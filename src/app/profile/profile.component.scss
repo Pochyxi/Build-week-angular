@@ -1,0 +1,47 @@
+div {
+  height: 80vh;
+}
+form {
+    width: 70%;
+    margin: auto;
+    padding-top: 15px;
+}
+mat-drawer-container {
+    padding-top: 3em;
+    position: relative;
+    top: -8vh;
+    left: 0;
+}
+
+mat-drawer {
+
+        width: 20%;
+
+        .sider {
+            padding-top: 20px;
+            height: auto;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                border-radius: 50%;
+                margin-top: 1em;
+            }
+            .name {
+                padding-top: 0.7em
+            }
+            .email {
+                padding: 0 0.5em
+            }
+        }
+    }
+
+    h2 {
+        margin: 13px 0 0 20px;
+    }
+
+    .mod {
+        margin-bottom: 0.7em;
+    }

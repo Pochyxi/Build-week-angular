@@ -1,1 +1,82 @@
-<p>profile works!</p>
+<div>
+  <mat-drawer-container class="mt-2">
+    <mat-drawer mode="side" opened
+      ><!--SIDE CON INFORMAZIONI PROFILO-->
+      <div class="sider">
+        <img src="https://picsum.photos/seed/picsum/60/60" alt="UserLogo" />
+        <h3 class="name">{{ myProfile.nome }}</h3>
+        <h4 class="email">{{ myProfile.email }}</h4>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content
+      ><!--MAIN CONTAINER-->
+      <h2>My Profile</h2>
+      <div *ngIf="!modify">
+        <mat-list>
+          <mat-list-item>Nome: {{ myProfile.nome }}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Username: {{ myProfile.username }}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Età: {{ myProfile.eta }}</mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>Email: {{ myProfile.email }}</mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+
+        <button
+          class="m-3"
+          mat-raised-button
+          color="primary"
+          (click)="modify = !modify"
+        >
+          Modifica dati
+        </button>
+      </div>
+      <mat-stepper labelPosition="bottom" #stepper *ngIf="modify">
+        <mat-step [stepControl]="firstFormGroup">
+          <form class="w-100" [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Nome Utente</ng-template>
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="{{ myProfile.nome }}"
+                formControlName="firstCtrl"
+                required
+              />
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" optional>
+          <form class="w-100" [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Email</ng-template>
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                formControlName="secondCtrl"
+                placeholder="{{ myProfile.email }}"
+                required
+              />
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperPrevious>Indietro</button>
+              <button mat-button matStepperNext>Avanti</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Finito</ng-template>
+          <p class="text-center">Hai compilato correttamente!</p>
+          <div class="mx-auto text-center">
+            <button mat-button (click)="stepper.reset()">Indietro</button>
+            <button mat-button (click)="modifyPost()">Completa</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

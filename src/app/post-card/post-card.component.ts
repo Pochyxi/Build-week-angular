@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
-import { Comments } from '../comments';
 import { Posts } from '../posts';
 import { PostsService } from '../posts.service';
 import { UserService } from '../user.service';
@@ -15,15 +14,20 @@ import { User } from '../users';
 })
 export class PostCardComponent implements OnInit {
   @Input() p!: Posts;
+
   isLogged!: boolean;
+
   sub!: Subscription;
 
   arrayUsers: User[] = [];
+  likesArray: User[] = [];
 
   form!: FormGroup;
 
   modifyFlag: boolean = false;
   likeFlag: boolean = false;
+
+  colorHeart = 'black';
 
   deletePressed: boolean = false;
 
@@ -32,6 +36,7 @@ export class PostCardComponent implements OnInit {
   userName: string | undefined;
 
   commentiFlag = false;
+  showLikes = false;
 
   @Output() shotId = new EventEmitter<Posts>();
   @Output() shotobj = new EventEmitter<Posts>();
@@ -56,8 +61,11 @@ export class PostCardComponent implements OnInit {
     this.users$.getUsers().subscribe((users) => {
       this.arrayUsers = users;
     });
-    if (this.p.likes.find((u) => u.id == this.p.likes[0].id)) {
+    if (this.p.likes.find((u) => u.id == this.id)) {
       this.likeFlag = true;
+      this.colorHeart = 'warn';
+      this.likesArray = this.p.likes;
+      console.log(this.p.likes);
     }
   }
   delete() {
@@ -84,21 +92,28 @@ export class PostCardComponent implements OnInit {
   like() {
     if (!this.likeFlag) {
       this.likeFlag = !this.likeFlag;
+      this.colorHeart = 'warn';
       console.log(this.likeFlag);
+
       let obj: any = this.arrayUsers.find((u) => u.id == this.id);
       this.p.likes.push(obj);
-      this.post$.modifyPost(this.p).subscribe((res) => {
+
+      this.post$.putPost(this.p).subscribe((res) => {
         this.p = res;
       });
     } else {
       this.likeFlag = !this.likeFlag;
-      this.p.likes = this.p.likes.filter((u) => u.id != this.p.likes[0].id);
-      this.post$.modifyPost(this.p).subscribe((res) => {
+      this.colorHeart = 'black';
+      this.p.likes = this.p.likes.filter((u) => u.id != this.id);
+      this.post$.putPost(this.p).subscribe((res) => {
         this.p = res;
       });
     }
 
     console.log(this.p.likes);
+  }
+  shotPostId() {
+    this.post$.setPostId(this.id);
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

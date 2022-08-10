@@ -20,4 +20,20 @@
         margin-right: .5em;
 
     }
+
+}
+
+.buttonToggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate( 5%, 5%);
+}
+
+.example-card {
+    width: 70%;
+    margin: auto;
+}
+a {
+  text-decoration: none;
 }

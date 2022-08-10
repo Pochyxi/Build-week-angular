@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   logged!: boolean;
 
   confirm: boolean = false;
+  formFlag: boolean = false;
 
   form!: FormGroup;
 

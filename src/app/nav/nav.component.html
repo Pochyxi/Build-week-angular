@@ -1,15 +1,20 @@
 <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">{{ userName }}</a>
+
     <button
+      mat-mini-fab
+      color="primary"
+      aria-label="Example icon button with a menu icon"
       class="navbar-toggler"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasNavbar"
       aria-controls="offcanvasNavbar"
     >
-      <span class="navbar-toggler-icon"></span>
+      <mat-icon id="materialIcon">menu</mat-icon>
     </button>
+
     <div
       class="offcanvas offcanvas-end"
       tabindex="-1"
@@ -17,7 +22,15 @@
       aria-labelledby="offcanvasNavbarLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+          <mat-icon
+            mat-icon-button
+            color="primary"
+            aria-label="Example icon button with a home icon"
+          >
+            <mat-icon>home</mat-icon>
+          </mat-icon>
+        </h5>
         <button
           type="button"
           class="btn-close"
@@ -38,7 +51,7 @@
               [routerLink]="['/signup']"
               aria-current="page"
               *ngIf="!isLogged"
-              >SIGNUP</a
+              >Signup</a
             >
           </li>
           <li class="nav-item">
@@ -47,7 +60,16 @@
               [routerLink]="['/login']"
               aria-current="page"
               *ngIf="!isLogged"
-              >LOGIN</a
+              >Login</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              [routerLink]="['/profile']"
+              aria-current="page"
+              *ngIf="isLogged"
+              >Profile</a
             >
           </li>
           <li class="nav-item">
@@ -59,10 +81,15 @@
               >MyPosts</a
             >
           </li>
-          <li>
-            <button class="btn btn-danger" (click)="logout()" *ngIf="isLogged">
+          <li class="nav-item">
+            <a
+              aria-current="page"
+              class="nav-link active"
+              (click)="logout()"
+              *ngIf="isLogged"
+            >
               Logout
-            </button>
+            </a>
           </li>
         </ul>
       </div>

@@ -29,11 +29,13 @@
         {{ item.body }}
         <div>
           <button
+            *ngIf="post.comments[index].idUser == userId"
             type="button"
-            (click)="deleteComment()"
-            class="btn btn-danger"
+            (click)="deleteComment(index)"
+            mat-button
+            color="warn"
           >
-            Elimina commento
+            <small>Elimina</small>
           </button>
         </div>
       </div>

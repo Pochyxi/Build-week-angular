@@ -18,6 +18,7 @@ export class CommentComponent implements OnInit {
   @Input() commentiFlag!: boolean;
   userId: any;
   arrayUsers: User[] = [];
+  ownedComments: boolean = false;
 
   form!: FormGroup;
 
@@ -38,6 +39,10 @@ export class CommentComponent implements OnInit {
     });
     this.userId = localStorage.getItem('id');
     console.log(this.post.comments);
+
+    if (this.post.comments.find((comment) => comment.idUser == this.userId)) {
+      this.ownedComments = true;
+    }
   }
   getFormControl(name: string) {
     return this.form.get(name);
@@ -77,8 +82,8 @@ export class CommentComponent implements OnInit {
       console.log('form not valid');
     }
   }
-  deleteComment() {
-    let id = this.post.comments[0].id;
+  deleteComment(index: number) {
+    let id = this.post.comments[index].id;
     this.post.comments = this.post.comments.filter(
       (comment) => comment.id != id
     );
