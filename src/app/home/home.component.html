@@ -1,6 +1,7 @@
 <div class="full">
   <div class="d-flex pt-4">
     <button
+      *ngIf="logged"
       (click)="formFlag = !formFlag"
       mat-raised-button
       color="primary"

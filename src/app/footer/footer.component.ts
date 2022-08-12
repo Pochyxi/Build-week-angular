@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
+  showed!: string;
   arrWords = [
     'Adiener Lopez Velazquez',
     'Giandomenico Maggio',
@@ -13,26 +14,12 @@ export class FooterComponent implements OnInit {
     'Chiara Soddu',
     'Luca Trimboli',
   ];
-
-  showed!: string;
-
   constructor() {}
 
   ngOnInit(): void {
-    let i = 0;
-
-    while (i < this.arrWords.length) {
-      if (i < this.arrWords.length) {
-        setInterval(() => {
-          this.showed = this.showNames(i);
-        }, 1000);
-      } else {
-        i = 0;
-      }
-      i++;
-    }
-  }
-  showNames(i: number) {
-    return this.arrWords[i];
+    setInterval(() => {
+      this.showed =
+        this.arrWords[Math.floor(Math.random() * this.arrWords.length)];
+    }, 1000);
   }
 }
