@@ -1,170 +1,662 @@
 {
   "posts": [
     {
-      "id": 2,
+      "id": 1,
       "autore": 1,
       "autorname": "BUDKASPLIT()",
-      "title": "123",
-      "body": "11111111111",
+      "title": "123123",
+      "body": "123123",
       "likes": [
         {
-          "email": "marcopolo@gmail.com",
-          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-          "nome": "123123123",
-          "username": "Marco Polo",
-          "eta": 405,
-          "id": 2
-        },
-        {
-          "email": "immolettina@gmail.com",
-          "password": "$2a$10$5gdq8smkTJKpHiHhY6PXzegp4QjQB9Y2CGvPWtEn1FBGCc0SOi/sq",
-          "nome": "Imma",
-          "username": "ImmaFetaiol",
-          "eta": 26,
-          "id": 3
-        },
-        {
-          "email": "123@123.123",
+          "email": "budka@budka.budka",
           "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
-          "nome": "123",
+          "nome": "Budken",
           "username": "BUDKASPLIT()",
           "eta": 123,
-          "id": 1
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
         }
       ],
       "comments": [
         {
-          "id": 11,
-          "idPost": 2,
-          "idUser": 3,
-          "body": "ciao budka!!",
-          "authorname": "ImmaFetaiol"
+          "id": 1,
+          "idPost": 1,
+          "idUser": 1,
+          "body": "BudkaSPLIFF",
+          "authorname": "BUDKASPLIT()"
         },
         {
-          "id": 12,
+          "id": 2,
+          "idPost": 1,
+          "idUser": 1,
+          "body": "uffa",
+          "authorname": "BUDKASPLIT()"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "Buon giorno!",
+      "body": "Ciao a tutti e buon giorno!",
+      "likes": [
+        {
+          "email": "cippi@cippi.cippi",
+          "password": "$2a$10$XIhWcZhkVcbLTzNqq66eve.UkJ2nllf4gWuK9qaTPyfvKVEh/5mIC",
+          "nome": "cippi",
+          "username": "cippi",
+          "eta": 123,
+          "friends": [],
+          "id": 12
+        },
+        {
+          "email": "m.zuckerberg@gmail.com",
+          "password": "$2a$10$PS8cm6Gveaqw8vJmS9E7Y.kKuaeftyz0JNxwMMbrB2b9oDVn7lKUO",
+          "nome": "Mark Zuckerberg",
+          "username": "Zucki84",
+          "eta": 38,
+          "friends": [
+            {
+              "email": "budka@budka.budka",
+              "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+              "nome": "Budken",
+              "username": "BUDKASPLIT()",
+              "eta": 123,
+              "id": 1,
+              "friends": []
+            }
+          ],
+          "id": 11
+        },
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
           "idPost": 2,
           "idUser": 2,
-          "body": "ciao budka!!!",
+          "body": "ciao budka ti aggiungo agli amici!",
           "authorname": "Marco Polo"
         },
         {
-          "id": 13,
+          "id": 2,
           "idPost": 2,
           "idUser": 1,
-          "body": "Non ha senso creare un post e scrivere 11111 scusa!",
+          "body": "grazie! ricambio!",
           "authorname": "BUDKASPLIT()"
         }
       ]
     },
     {
       "id": 3,
-      "autore": 1,
-      "autorname": "BUDKASPLIT()",
-      "title": "waka waka tiki taka",
-      "body": "budka è budka era",
-      "likes": [
-        {
-          "email": "marcopolo@gmail.com",
-          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-          "nome": "123123123",
-          "username": "Marco Polo",
-          "eta": 405,
-          "id": 2
-        }
-      ],
-      "comments": [
-        {
-          "id": 3,
-          "idPost": 3,
-          "idUser": 1,
-          "body": "11111111",
-          "authorname": "BUDKASPLIT()"
-        }
-      ]
-    },
-    {
-      "id": 5,
       "autore": 2,
       "autorname": "Marco Polo",
-      "title": "Piacere Marco",
-      "body": "Ciao tutti sono Marco ed il mio hobby preferito è giocare a \"Polo\"",
+      "title": "ciao che bella giornata!",
+      "body": "qui è tutto sereno",
       "likes": [
         {
-          "email": "marcopolo@gmail.com",
-          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-          "nome": "123123123",
-          "username": "Marco Polo",
-          "eta": 405,
-          "id": 2
-        },
-        {
-          "email": "immolettina@gmail.com",
-          "password": "$2a$10$5gdq8smkTJKpHiHhY6PXzegp4QjQB9Y2CGvPWtEn1FBGCc0SOi/sq",
-          "nome": "Imma",
-          "username": "ImmaFetaiol",
-          "eta": 26,
-          "id": 3
-        }
-      ],
-      "comments": []
-    },
-    {
-      "id": 6,
-      "autore": 3,
-      "autorname": "ImmaFetaiol",
-      "title": "Piacere",
-      "body": "Ciao a tutti sono immolettina",
-      "likes": [
-        {
-          "email": "marcopolo@gmail.com",
-          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-          "nome": "123123123",
-          "username": "Marco Polo",
-          "eta": 405,
-          "id": 2
-        },
-        {
-          "email": "123@123.123",
-          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
-          "nome": "123",
-          "username": "BUDKASPLIT()",
+          "email": "cippi@cippi.cippi",
+          "password": "$2a$10$XIhWcZhkVcbLTzNqq66eve.UkJ2nllf4gWuK9qaTPyfvKVEh/5mIC",
+          "nome": "cippi",
+          "username": "cippi",
           "eta": 123,
-          "id": 1
+          "friends": [],
+          "id": 12
         }
       ],
       "comments": [
         {
           "id": 1,
-          "idPost": 6,
-          "idUser": 1,
-          "body": "1111111",
-          "authorname": "BUDKASPLIT()"
+          "idPost": 3,
+          "idUser": 12,
+          "body": "heyaaaaaa",
+          "authorname": "cippi"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "autore": 12,
+      "autorname": "cippi",
+      "title": "123aaaa",
+      "body": "123aaa",
+      "likes": [
+        {
+          "email": "cippi@cippi.cippi",
+          "password": "$2a$10$XIhWcZhkVcbLTzNqq66eve.UkJ2nllf4gWuK9qaTPyfvKVEh/5mIC",
+          "nome": "cippi",
+          "username": "cippi",
+          "eta": 123,
+          "friends": [],
+          "id": 12
         },
         {
-          "id": 2,
-          "idPost": 6,
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "m.zuckerberg@gmail.com",
+          "password": "$2a$10$PS8cm6Gveaqw8vJmS9E7Y.kKuaeftyz0JNxwMMbrB2b9oDVn7lKUO",
+          "nome": "Mark Zuckerberg",
+          "username": "Zucki84",
+          "eta": 38,
+          "friends": [
+            {
+              "email": "budka@budka.budka",
+              "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+              "nome": "Budken",
+              "username": "BUDKASPLIT()",
+              "eta": 123,
+              "id": 1,
+              "friends": []
+            }
+          ],
+          "id": 11
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": []
+    },
+    {
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "aaaaa",
+      "body": "aaaaa",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [],
+      "id": 5
+    },
+    {
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "Qualcosa",
+      "body": "Dal carrello?",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [],
+      "id": 6
+    },
+    {
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "pennarello",
+      "body": "bello",
+      "likes": [
+        {
+          "email": "m.zuckerberg@gmail.com",
+          "password": "$2a$10$PS8cm6Gveaqw8vJmS9E7Y.kKuaeftyz0JNxwMMbrB2b9oDVn7lKUO",
+          "nome": "Mark Zuckerberg",
+          "username": "Zucki84",
+          "eta": 38,
+          "friends": [
+            {
+              "email": "budka@budka.budka",
+              "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+              "nome": "Budken",
+              "username": "BUDKASPLIT()",
+              "eta": 123,
+              "id": 1,
+              "friends": []
+            }
+          ],
+          "id": 11
+        },
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "idPost": 7,
           "idUser": 1,
-          "body": "22222222",
+          "body": "Qualcosa dal carrello?\n",
+          "authorname": "BUDKASPLIT()"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "dico",
+      "body": "budkayoooooo",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [],
+      "id": 8
+    },
+    {
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "asdasd",
+      "body": "asdasd",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comments": [],
+      "id": 9
+    },
+    {
+      "id": 10,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "123",
+      "body": "123123",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": 11,
+      "autore": 1,
+      "autorname": "BUDKASPLIT()",
+      "title": "HOFAMEEEEEEE",
+      "body": "ANDIAMO A MANGIAREEEEEE",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": 12,
+      "autore": 11,
+      "autorname": "Zucki84",
+      "title": "Il CSS fa cagare",
+      "body": "Odio il CSS e chi l'ha inventato",
+      "likes": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": [
+            {
+              "email": "marcopolo@gmail.com",
+              "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+              "nome": "123aaaa",
+              "username": "Marco Polo",
+              "eta": 405,
+              "id": 2,
+              "friends": [
+                {
+                  "email": "budka@budka.budka",
+                  "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+                  "nome": "Budken",
+                  "username": "BUDKASPLIT()",
+                  "eta": 123,
+                  "id": 1,
+                  "friends": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "idPost": 12,
+          "idUser": 1,
+          "body": "Bootstrap fa schif!!\n",
           "authorname": "BUDKASPLIT()"
         }
       ]
     },
     {
-      "id": 7,
+      "id": 13,
       "autore": 1,
       "autorname": "BUDKASPLIT()",
-      "title": "Il mio dolore",
-      "body": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
-      "likes": [],
-      "comments": []
-    }
-  ],
-  "comments": [
-    {
-      "id": 0,
-      "idPost": 0,
-      "idUser": 0,
-      "body": "lorem ipsum dolor"
+      "title": "Il cartello",
+      "body": "Adiener è cugino di Pablo Escobar",
+      "likes": [
+        {
+          "email": "777@777.777",
+          "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+          "nome": "PoloNord",
+          "username": "Kaioken",
+          "eta": 123,
+          "friends": [],
+          "id": 8
+        }
+      ],
+      "comments": [
+        {
+          "id": 1,
+          "idPost": 13,
+          "idUser": 8,
+          "body": "Lo sappiamo. La bamba ragazzuoliih",
+          "authorname": "Kaioken"
+        }
+      ]
     }
   ],
   "users": [
@@ -174,15 +666,47 @@
       "nome": "Budken",
       "username": "BUDKASPLIT()",
       "eta": 123,
-      "id": 1
+      "id": 1,
+      "friends": [
+        {
+          "email": "marcopolo@gmail.com",
+          "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
+          "nome": "123aaaa",
+          "username": "Marco Polo",
+          "eta": 405,
+          "id": 2,
+          "friends": [
+            {
+              "email": "budka@budka.budka",
+              "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+              "nome": "Budken",
+              "username": "BUDKASPLIT()",
+              "eta": 123,
+              "id": 1,
+              "friends": []
+            }
+          ]
+        }
+      ]
     },
     {
-      "email": "marcopolonerd@gmail.com",
+      "email": "marcopolo@gmail.com",
       "password": "$2a$10$I6mHXTL9eeTTlQuwbt0jPOlBeqiI9otWrc/.cEttnvCmi6Nqyi.4q",
-      "nome": "123123",
+      "nome": "123aaaa",
       "username": "Marco Polo",
       "eta": 405,
-      "id": 2
+      "id": 2,
+      "friends": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": []
+        }
+      ]
     },
     {
       "email": "immolettina@gmail.com",
@@ -190,7 +714,90 @@
       "nome": "Imma",
       "username": "ImmaFetaiol",
       "eta": 26,
-      "id": 3
+      "id": 3,
+      "friends": []
+    },
+    {
+      "email": "capricciosa@conpepe.gnam",
+      "password": "$2a$10$n4LguvtRnhAnYUJa4hBDzOEfReIGadcTqgTz.15HbXTlyA1fa3GMS",
+      "nome": "Gustavo",
+      "username": "LaPizza",
+      "eta": 42,
+      "id": 5,
+      "friends": []
+    },
+    {
+      "email": "111@111.111",
+      "password": "$2a$10$sQkTnxU.dSAgQYQNyFdo9ORExkmuULyudUSFPlwsejIbjjRQcxpKO",
+      "nome": "123123",
+      "username": "Marco Polo",
+      "eta": 123,
+      "id": 6,
+      "friends": []
+    },
+    {
+      "email": "12123@1231.12233",
+      "password": "$2a$10$5sj6v1sbj4VQ4O5MBupdJO9s8/kE8hegn3AillsVh7qgBct0dJ3EK",
+      "nome": "123",
+      "username": "Marco Polossss",
+      "eta": 123123,
+      "id": 7,
+      "friends": []
+    },
+    {
+      "email": "777@777.777",
+      "password": "$2a$10$TbP5U9n77lWc7gRw25DOC.0bBgR8qJYtIxKHV8IeZvPNlCaXncrrC",
+      "nome": "PoloNord",
+      "username": "Kaioken",
+      "eta": 123,
+      "friends": [],
+      "id": 8
+    },
+    {
+      "email": "aa@aa.aa",
+      "password": "$2a$10$uswC/21D/VmSHQGzxB0Kc./hoBA3X9Dwl14A9BlW7WXi4QRgYqxqG",
+      "nome": "AAAAAAAA",
+      "username": "BBBBBBBB",
+      "eta": 123,
+      "friends": [],
+      "id": 9
+    },
+    {
+      "email": "aa@aa.ab",
+      "password": "$2a$10$oP7/GelklqL9q7IIUWq6Ou2MEzphubp2kRfhylrd2f76wdF235xZq",
+      "nome": "ssddffgfg",
+      "username": "Marco Polo1",
+      "eta": 123,
+      "friends": [],
+      "id": 10
+    },
+    {
+      "email": "m.zuckerberg@gmail.com",
+      "password": "$2a$10$PS8cm6Gveaqw8vJmS9E7Y.kKuaeftyz0JNxwMMbrB2b9oDVn7lKUO",
+      "nome": "Mark Zuckerberg",
+      "username": "Zucki84",
+      "eta": 38,
+      "friends": [
+        {
+          "email": "budka@budka.budka",
+          "password": "$2a$10$4m3Ycu8PLXrb3Fdz1ZelceS2VsYkqasell3.7stmmmgBZvKxT19Uy",
+          "nome": "Budken",
+          "username": "BUDKASPLIT()",
+          "eta": 123,
+          "id": 1,
+          "friends": []
+        }
+      ],
+      "id": 11
+    },
+    {
+      "email": "cippi@cippi.cippi",
+      "password": "$2a$10$XIhWcZhkVcbLTzNqq66eve.UkJ2nllf4gWuK9qaTPyfvKVEh/5mIC",
+      "nome": "cippi",
+      "username": "cippi",
+      "eta": 123,
+      "friends": [],
+      "id": 12
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 import { Comments } from '../comments';
 import { Posts } from '../posts';
 import { PostsService } from '../posts.service';
@@ -19,20 +20,25 @@ export class CommentComponent implements OnInit {
   userId: any;
   arrayUsers: User[] = [];
   ownedComments: boolean = false;
+  isLog: boolean = false;
+
+  pubblicaFlag = false;
 
   form!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private user$: UserService,
-    private post$: PostsService
+    private post$: PostsService,
+    private auth$: AuthService
   ) {
     this.form = this.fb.group({
-      body: ['', [Validators.required, Validators.minLength(5)]],
+      body: ['', [Validators.minLength(1)]],
     });
   }
 
   ngOnInit(): void {
+    this.isLog = this.auth$.isLogged();
     this.user$.getUsers().subscribe((user) => {
       this.arrayUsers = user;
       console.log(this.arrayUsers);
@@ -59,7 +65,10 @@ export class CommentComponent implements OnInit {
       authorname: this.arrayUsers.find((u) => u.id == this.userId)?.username,
     };
 
-    if (this.form.valid) {
+    if (
+      this.form.valid &&
+      this.getFormControl('body')?.value.toString().length > 0
+    ) {
       this.post.comments.push(obj);
       this.post$
         .modifyPost({
@@ -91,5 +100,10 @@ export class CommentComponent implements OnInit {
       console.log(res);
       this.post = res;
     });
+  }
+  delay() {
+    setTimeout(() => {
+      this.pubblicaFlag = false;
+    }, 1000);
   }
 }

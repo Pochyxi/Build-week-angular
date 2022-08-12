@@ -1,1 +1,6 @@
-<div></div>
+<div>
+  <h1>
+    Powered by:
+    <span *ngFor="let item of arrWords; index as i"> | {{ arrWords[i] }}</span>
+  </h1>
+</div>

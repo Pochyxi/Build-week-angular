@@ -5,3 +5,11 @@
   width: 70%;
   margin: auto;
 }
+.columnReverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.full {
+  min-height: 100vh;
+}
+

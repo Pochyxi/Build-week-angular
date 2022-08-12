@@ -1,3 +1,111 @@
 <div>
-  <app-post-card class="ciao" [p]="p"></app-post-card>
+  <div>
+    <mat-card class="example-card text-center mt-5">
+      <mat-card-title (click)="shotPostId()">
+        <a [routerLink]="['/post/', p.id]">{{ p.title }}</a>
+      </mat-card-title>
+      <mat-card-subtitle> Author: {{ p.autorname }} </mat-card-subtitle>
+      <mat-card-content>
+        <p class="card-text">
+          {{ p.body }}
+        </p>
+      </mat-card-content>
+      <button
+        class="buttonToggle"
+        *ngIf="ownedPost"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item (click)="deletePressed = !deletePressed">DELETE</a>
+        <a mat-menu-item (click)="openForm()">{{
+          modifyFlag == true ? "ANNULLA" : "MODIFY"
+        }}</a>
+      </mat-menu>
+
+      <mat-card-actions *ngIf="p.autore == id"> </mat-card-actions>
+      <a
+        mat-icon-button
+        [color]="colorHeart"
+        *ngIf="isLogged"
+        (click)="like()"
+        class="mx-2"
+        ><mat-icon>favorite</mat-icon></a
+      >
+      <a
+        mat-button
+        [matMenuTriggerFor]="likes"
+        (click)="showLikes = !showLikes"
+      >
+        LIKES: {{ p.likes.length }}</a
+      >
+      <mat-menu class="px-3" #likes="matMenu">
+        <p *ngFor="let like of p.likes; index as i">-{{ like.username }}</p>
+      </mat-menu>
+      <a mat-button (click)="commentiFlag = !commentiFlag" class="my-2"
+        >COMMENTI</a
+      >
+      <div *ngIf="deletePressed" id="modal">
+        <h3>Sei sicuro?</h3>
+        <div>
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="delete(); deletePressed = !deletePressed"
+          >
+            Sì, cazzo
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="deletePressed = !deletePressed"
+          >
+            No, sono un coglione
+          </button>
+        </div>
+      </div>
+      <app-comment [post]="p" [commentiFlag]="commentiFlag"></app-comment>
+      <div>
+        <form
+          *ngIf="modifyFlag"
+          [formGroup]="form"
+          (ngSubmit)="modify()"
+          class="mt-5 p-3"
+        >
+          <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
+          <input
+            formControlName="title"
+            class="w-100"
+            type="text"
+            id="titolo"
+          /><br />
+          <label
+            class="text-center"
+            for="exampleFormControlTextarea1"
+            class="form-label"
+            >Modifica post</label
+          >
+
+          <textarea
+            formControlName="body"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+
+          <button
+            class="btn btn-primary w-100 mt-1"
+            type="submit"
+            (click)="modify()"
+          >
+            Modifica
+          </button>
+        </form>
+      </div>
+      <div class="card-footer"></div>
+    </mat-card>
+  </div>
 </div>

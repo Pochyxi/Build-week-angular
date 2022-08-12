@@ -5,13 +5,29 @@
     box-sizing: border-box;
 }
 body {
-  padding-top: 100px;
+  padding-top: 10px;
+
 }
 app-root {
-  height: 100vh;
-}
+    width: 100%;
+    height: 100vh;
+  }
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+/*-----------PALETTE----------------*/
+.red-bg{background-color: #e63946;}
+.white-bg{background-color: #f1faee;}
+.sugar-bg{background-color: #a8dadc;}
+.lightBlue-bg{background-color: #457b9d;}
+.blue-bg{background-color:#1d3557;}
+
+.red{background-color: #e63946;}
+.white{background-color: #f1faee;}
+.sugar{background-color: #a8dadc;}
+.lightBlue{background-color: #457b9d;}
+.blue{background-color:#1d3557;}
+/*-----------------------------------*/
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

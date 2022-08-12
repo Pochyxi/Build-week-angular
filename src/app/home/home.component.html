@@ -1,53 +1,48 @@
-<div class="d-flex">
-  <button
-    (click)="formFlag = !formFlag"
-    mat-raised-button
-    color="primary"
-    class="mt-5 mx-auto"
-  >
-    AGGIUNGI POST
-  </button>
-</div>
-<div *ngIf="formFlag">
-  <form
-    id="addPost"
-    *ngIf="logged"
-    [formGroup]="form"
-    (ngSubmit)="addPost()"
-    class="p-3"
-  >
-    <label class="text-center mt-4" for="titolo">Titolo Post</label><br />
-    <input
-      formControlName="title"
-      class="w-100"
-      type="text"
-      id="titolo"
-    /><br />
-    <label
-      class="text-center"
-      for="exampleFormControlTextarea1"
-      class="form-label"
-      >Pubblica post</label
+<div class="full">
+  <div class="d-flex pt-4">
+    <button
+      (click)="formFlag = !formFlag"
+      mat-raised-button
+      color="primary"
+      class="mt-5 mx-auto"
     >
-
-    <textarea
-      formControlName="body"
-      class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
-    ></textarea>
-
-    <button mat-stroked-button color="primary" class="w-100 mt-1" type="submit">
-      Pubblica
+      {{ !formFlag ? "PUBBLICA POST" : "ANNULLA" }}
     </button>
-  </form>
-</div>
+  </div>
+  <div *ngIf="formFlag">
+    <form
+      id="addPost"
+      *ngIf="logged"
+      [formGroup]="form"
+      (ngSubmit)="addPost()"
+      class="p-3"
+    >
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Titolo Post</mat-label>
+        <textarea matInput formControlName="title" class="w-100"></textarea>
+      </mat-form-field>
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Pubblica post</mat-label>
+        <textarea formControlName="body" matInput class="w-100"></textarea>
+      </mat-form-field>
 
-<div class="p-3">
-  <app-post-card
-    *ngFor="let post of posts; index as i"
-    [p]="post"
-    (shotId)="deletePost($event)"
-    (shotobj)="modify($event)"
-  ></app-post-card>
+      <button
+        mat-raised-button
+        color="primary"
+        class="w-100 mt-1"
+        type="submit"
+      >
+        Pubblica
+      </button>
+    </form>
+  </div>
+
+  <div class="p-3 columnReverse">
+    <app-post-card
+      *ngFor="let post of posts; index as i"
+      [p]="post"
+      (shotId)="deletePost($event)"
+      (shotobj)="modify($event)"
+    ></app-post-card>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="all">
+  <div class="profile">
+    <div class="siderx">
+      <img src="https://picsum.photos/seed/picsum/60/60" alt="UserLogo" />
+      <h3 class="name">Nome: {{ user.nome }}</h3>
+      <h4 class="email">Email: {{ user.email }}</h4>
+      <div class="actions">
+        <button mat-stroked-button color="primary">Follow</button><br />
+        <button mat-raised-button color="warn">Unfollow</button>
+      </div>
+    </div>
+  </div>
+  <div class="post-card">
+    <app-post-card *ngFor="let item of arrPosts" [p]="item"></app-post-card>
+  </div>
+</div>

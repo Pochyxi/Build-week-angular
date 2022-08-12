@@ -1,4 +1,29 @@
 <div *ngIf="commentiFlag">
+  <form
+    *ngIf="isLog"
+    [formGroup]="form"
+    class="mt-5 p-3"
+    (ngSubmit)="addComment()"
+  >
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Commenta...</mat-label>
+      <textarea
+        (focus)="pubblicaFlag = true"
+        (focusout)="delay()"
+        formControlName="body"
+        matInput
+      ></textarea>
+    </mat-form-field>
+    <button
+      *ngIf="pubblicaFlag"
+      mat-stroked-button
+      color="primary"
+      class="w-50 mt-3"
+      type="submit"
+    >
+      Pubblica
+    </button>
+  </form>
   <cdk-accordion class="example-accordion mx-auto">
     <cdk-accordion-item
       *ngFor="let item of post.comments; let index = index"
@@ -41,21 +66,4 @@
       </div>
     </cdk-accordion-item>
   </cdk-accordion>
-  <form [formGroup]="form" class="mt-5 p-3" (ngSubmit)="addComment()">
-    <label
-      class="text-center"
-      for="exampleFormControlTextarea1"
-      class="form-label"
-      >Pubblica commento</label
-    >
-
-    <textarea
-      formControlName="body"
-      class="form-control"
-      id="exampleFormControlTextarea1"
-      rows="3"
-    ></textarea>
-
-    <button class="btn btn-primary w-100 mt-1" type="submit">Pubblica</button>
-  </form>
 </div>

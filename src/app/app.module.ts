@@ -34,6 +34,13 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatBadgeModule } from '@angular/material/badge';
+import { SingleUserPageComponent } from './single-user-page/single-user-page.component';
+import { FollowedPostsComponent } from './followed-posts/followed-posts.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TrendsComponent } from './trends/trends.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +56,10 @@ import { MatListModule } from '@angular/material/list';
     SignupComponent,
     CommentComponent,
     PuntiniPipe,
+    DialogComponent,
+    SingleUserPageComponent,
+    FollowedPostsComponent,
+    TrendsComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +82,9 @@ import { MatListModule } from '@angular/material/list';
     MatInputModule,
     MatDividerModule,
     MatListModule,
+    MatDialogModule,
+    MatBadgeModule,
+    ScrollingModule,
   ],
   providers: [
     {
@@ -81,6 +95,10 @@ import { MatListModule } from '@angular/material/list';
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'fill' },
+    },
+    {
+      provide: MAT_DIALOG_DATA,
+      useClass: DialogComponent,
     },
   ],
   bootstrap: [AppComponent],

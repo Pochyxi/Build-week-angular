@@ -3,7 +3,22 @@
     <mat-card-title (click)="shotPostId()">
       <a [routerLink]="['/post/', p.id]">{{ p.title }}</a>
     </mat-card-title>
-    <mat-card-subtitle> Author: {{ p.autorname }} </mat-card-subtitle>
+    <mat-card-subtitle>
+      Author: <a (click)="showAddMenu = !showAddMenu">{{ p.autorname }} </a>
+      <div class="p-2" *ngIf="showAddMenu">
+        <button mat-raised-button color="basic" (click)="addFriend()">
+          Follow
+        </button>
+        <button
+          [routerLink]="['/user/', p.autore]"
+          class="mx-1"
+          mat-raised-button
+          color="primary"
+        >
+          Profilo
+        </button>
+      </div>
+    </mat-card-subtitle>
     <mat-card-content>
       <p class="card-text">
         {{ p.body }}
@@ -12,6 +27,7 @@
 
     <button
       class="buttonToggle"
+      *ngIf="ownedPost"
       mat-icon-button
       [matMenuTriggerFor]="menu"
       aria-label="Example icon-button with a menu"
@@ -34,29 +50,47 @@
       class="mx-2"
       ><mat-icon>favorite</mat-icon></a
     >
-    <a mat-button [matMenuTriggerFor]="likes" (click)="showLikes = !showLikes">
-      LIKES: {{ p.likes.length }}</a
+    <button
+      class="mx-3"
+      mat-raised-button
+      matBadge="{{ p.likes.length }}"
+      matBadgePosition="before"
+      mat-button
+      [matMenuTriggerFor]="likes"
+      (click)="showLikes = !showLikes"
     >
+      LIKES
+    </button>
     <mat-menu class="px-3" #likes="matMenu">
       <p *ngFor="let like of p.likes">-{{ like.username }}</p>
     </mat-menu>
-    <a mat-button (click)="commentiFlag = !commentiFlag" class="my-2"
-      >COMMENTI</a
+    <button
+      class="mx-2"
+      mat-button
+      mat-raised-button
+      matBadge="{{ p.comments.length }}"
+      matBadgePosition="before"
+      (click)="commentiFlag = !commentiFlag"
+      class="my-2"
     >
+      COMMENTI
+    </button>
     <div *ngIf="deletePressed" id="modal">
       <h3>Sei sicuro?</h3>
       <div>
         <button
-          class="btn btn-danger"
+          mat-raised-button
+          color="warn"
           (click)="delete(); deletePressed = !deletePressed"
         >
-          Sì, cazzo
+          Sì
         </button>
         <button
-          class="btn btn-primary"
+          mat-raised-button
+          color="primary"
           (click)="deletePressed = !deletePressed"
         >
-          No, sono un coglione
+          No
         </button>
       </div>
     </div>

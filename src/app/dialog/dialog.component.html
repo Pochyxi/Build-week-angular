@@ -1,0 +1,14 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <ul>
+    <li *ngIf="data.error === 'login'">
+      <span>&#215;</span> EMAIL O PASSWORD ERRATA
+    </li>
+    <li *ngIf="data.error === 'signup'">
+      <span>&#215;</span> EMAIL GIA' ESISTENTE
+    </li>
+    <li *ngIf="data.error === 'username'">
+      <span>&#215;</span> USERNAME GIA' ESISTENTE
+    </li>
+  </ul>
+</div>

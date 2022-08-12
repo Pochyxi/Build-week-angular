@@ -38,7 +38,7 @@ export class PostsService {
     return this.http.put<Posts>(this.url + obj.id, obj);
   }
   getSinglePost(id: number) {
-    return this.http.get<Posts[]>(this.url + id);
+    return this.http.get<Posts>(this.url + id);
   }
   setPostId(id: number) {
     this.postId = id;

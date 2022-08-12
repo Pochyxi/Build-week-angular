@@ -11,11 +11,18 @@ export class MyPostsComponent implements OnInit {
   constructor(private post$: PostsService) {}
 
   myPosts: Posts[] = [];
+  voidPosts: boolean = false;
 
   ngOnInit(): void {
     this.post$.getPosts().subscribe((res) => {
       let id = localStorage.getItem('id');
       this.myPosts = res.filter((post) => post.autore == id);
+      console.log(this.myPosts.length);
+      if (this.myPosts.length == 0) {
+        this.voidPosts = true;
+      } else {
+        this.voidPosts = false;
+      }
     });
   }
   deletePost(obj: Posts) {

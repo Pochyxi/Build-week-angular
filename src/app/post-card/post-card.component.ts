@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
+import { FriendRequestService } from '../friend-request.service';
 import { Posts } from '../posts';
 import { PostsService } from '../posts.service';
 import { UserService } from '../user.service';
@@ -16,16 +18,17 @@ export class PostCardComponent implements OnInit {
   @Input() p!: Posts;
 
   isLogged!: boolean;
+  ownedPost: boolean = false;
+  modifyFlag: boolean = false;
+  likeFlag: boolean = false;
 
   sub!: Subscription;
 
   arrayUsers: User[] = [];
   likesArray: User[] = [];
+  postOwner!: User;
 
   form!: FormGroup;
-
-  modifyFlag: boolean = false;
-  likeFlag: boolean = false;
 
   colorHeart = 'black';
 
@@ -38,6 +41,12 @@ export class PostCardComponent implements OnInit {
   commentiFlag = false;
   showLikes = false;
 
+  showAddMenu = false;
+  hidden: boolean = false;
+  author!: User;
+
+  friendsArray: User[] = [];
+
   @Output() shotId = new EventEmitter<Posts>();
   @Output() shotobj = new EventEmitter<Posts>();
 
@@ -45,7 +54,9 @@ export class PostCardComponent implements OnInit {
     private post$: PostsService,
     public fb: FormBuilder,
     private auth$: AuthService,
-    private users$: UserService
+    private users$: UserService,
+    private friend$: FriendRequestService,
+    private http: HttpClient
   ) {
     this.form = this.fb.group({
       title: ['', Validators.required],
@@ -57,15 +68,21 @@ export class PostCardComponent implements OnInit {
     this.sub = this.auth$.authObs.subscribe((res) => {
       res ? (this.isLogged = true) : (this.isLogged = false);
     });
-    console.log(this.p);
     this.users$.getUsers().subscribe((users) => {
       this.arrayUsers = users;
+      this.author = this.arrayUsers.find((user) => user.id == this.p.autore)!;
+      let arrSingleUser = this.arrayUsers.filter(
+        (user) => user.id == this.p.autore
+      );
+      this.postOwner = arrSingleUser[0];
     });
     if (this.p.likes.find((u) => u.id == this.id)) {
       this.likeFlag = true;
       this.colorHeart = 'warn';
       this.likesArray = this.p.likes;
-      console.log(this.p.likes);
+    }
+    if (this.p.autore == this.id) {
+      this.ownedPost = true;
     }
   }
   delete() {
@@ -109,11 +126,38 @@ export class PostCardComponent implements OnInit {
         this.p = res;
       });
     }
-
-    console.log(this.p.likes);
   }
   shotPostId() {
     this.post$.setPostId(this.id);
+  }
+
+  addFriend() {
+    this.friend$.sendRequest().subscribe((res) => {
+      let richiedente = res.find((u) => u.id == this.id);
+      console.log('richiedente: ', richiedente);
+
+      let ricevente = res.find((u) => u.id == this.p.autore);
+      console.log('ricevente: ', ricevente);
+      this.friendsArray = richiedente!.friends;
+      let notFriend = true;
+      for (const f of this.friendsArray) {
+        if (f.id == richiedente!.id) {
+          notFriend = false;
+        }
+      }
+      if (notFriend) {
+        this.friendsArray.push(ricevente!);
+        console.log('this.friendsArray: ' + this.friendsArray);
+        console.log(this.friendsArray);
+        this.http
+          .patch(`http://localhost:3000/users/${richiedente!.id}`, {
+            friends: this.friendsArray,
+          })
+          .subscribe((res) => {
+            console.log('Friend request sended correctly', res);
+          });
+      }
+    });
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

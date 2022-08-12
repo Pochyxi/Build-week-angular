@@ -1,23 +1,33 @@
 <div class="container w-50 p-3 mt-5">
   <form [formGroup]="form" (ngSubmit)="login()">
-    <label class="form-label" for="email">Email</label>
-    <input
-      class="form-control"
-      formControlName="email"
-      type="email"
-      id="email"
-      placeholder="email"
-    /><br />
-    <label class="form-label" for="password">Password</label>
-    <input
-      class="form-control"
-      formControlName="password"
-      type="password"
-      id="password"
-      placeholder="Password"
-    /><span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long. </span
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error>{{ getEmailError() }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+        required
+      />
+      <button
+        mat-icon-button
+        type="button"
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error>{{ getErrorMessage("password") }}</mat-error> </mat-form-field
     ><br />
-    <button class="btn btn-success w-100" type="submit">LOGIN</button>
+    <button mat-raised-button color="primary" class="mt-2 w-100" type="submit">
+      LOGIN
+    </button>
   </form>
 </div>

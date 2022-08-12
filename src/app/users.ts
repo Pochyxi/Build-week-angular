@@ -8,6 +8,7 @@ export interface UserSignup {
   password: string;
   nome: string;
   eta: number;
+  friends: User[];
 }
 
 export interface AuthUser {
@@ -27,4 +28,5 @@ export interface User {
   nome: string;
   eta: number;
   id: number | string | null;
+  friends: User[];
 }

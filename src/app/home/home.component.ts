@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
     this.posts$.getPosts().subscribe((post) => {
       this.posts = post;
       this.logged = this.auth$.isLogged();
-      console.log(this.logged);
     });
     this.users$.getUsers().subscribe((users) => {
       this.arrayUsers = users;
@@ -51,10 +50,14 @@ export class HomeComponent implements OnInit {
 
   addPost() {
     let aut: any = localStorage.getItem('id');
-
+    let lastId = 0;
+    for (const p of this.posts) {
+      if (p.id > lastId) {
+        lastId = p.id;
+      }
+    }
     let obj: any = {
-      id:
-        this.posts.length === 0 ? 1 : this.posts[this.posts.length - 1].id + 1,
+      id: lastId + 1,
       autore: parseInt(aut),
       autorname: this.arrayUsers.find((u) => u.id == aut)?.username,
       title: this.getFormControl('title')?.value,
@@ -62,25 +65,27 @@ export class HomeComponent implements OnInit {
       likes: [],
       comments: [],
     };
-    if (this.form.valid) {
-      this.posts$.newPost(obj);
-    } else {
-      console.log('form validation failed');
-    }
+    if (this.getFormControl('body')?.value.length > 1) {
+      if (this.form.valid) {
+        this.posts$.newPost(obj);
+      } else {
+        console.log('form validation failed');
+      }
 
-    this.form.setValue({
-      title: '',
-      body: '',
-    });
-    this.posts$.newPost(obj).subscribe(() => {
-      this.posts.push(obj);
-    });
+      this.form.setValue({
+        title: '',
+        body: '',
+      });
+      this.posts$.newPost(obj).subscribe(() => {
+        this.posts.push(obj);
+        this.formFlag = false;
+      });
+    }
   }
 
   deletePost(obj: Posts) {
     this.posts$.deletePost(obj.id).subscribe(() => {
       this.posts = this.posts.filter((post) => post.id != obj.id);
-      console.log(this.posts);
     });
   }
   modify(obj: Posts) {

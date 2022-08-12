@@ -15,10 +15,22 @@ export class NavComponent implements OnInit {
   isLogged!: boolean;
   id: any = localStorage.getItem('id');
   arrayUsers: User[] = [];
-  userName!: any;
-
+  me: User = {
+    email: 'cippi@cippi.cippi',
+    password: '$2a$10$XIhWcZhkVcbLTzNqq66eve.UkJ2nllf4gWuK9qaTPyfvKVEh/5mIC',
+    nome: 'cippi',
+    username: '...',
+    eta: 123,
+    friends: [],
+    id: 12,
+  };
+  showFollowers = false;
+  showFollowed = false;
+  followers: User[] = [];
+  followed: User[] = [];
   sub!: Subscription;
-
+  hidden: boolean = false;
+  hidden2: boolean = false;
   constructor(
     private auth$: AuthService,
     private router: Router,
@@ -32,9 +44,15 @@ export class NavComponent implements OnInit {
     });
     this.user$.getUsers().subscribe((res) => {
       this.arrayUsers = res;
-      this.userName = this.arrayUsers.find(
-        (user) => user.id == this.id
-      )?.username;
+      this.me = this.arrayUsers.find((user) => user.id == this.id)!;
+      this.followed = this.me.friends;
+      for (const u of this.arrayUsers) {
+        for (const f of u.friends) {
+          if (f.id == this.me.id) {
+            this.followers.push(u);
+          }
+        }
+      }
     });
   }
   logout(): void {

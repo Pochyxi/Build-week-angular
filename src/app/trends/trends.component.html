@@ -1,0 +1,8 @@
+<div class="p-3">
+  <app-post-card
+    *ngFor="let post of posts"
+    [p]="post"
+    (shotId)="deletePost($event)"
+    (shotobj)="modify($event)"
+  ></app-post-card>
+</div>

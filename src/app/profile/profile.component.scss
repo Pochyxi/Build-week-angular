@@ -1,5 +1,5 @@
 div {
-  height: 80vh;
+  height: 100vh;
 }
 form {
     width: 70%;
@@ -7,18 +7,18 @@ form {
     padding-top: 15px;
 }
 mat-drawer-container {
-    padding-top: 3em;
+    padding-top: 5em;
     position: relative;
-    top: -8vh;
+    top: 5.2vh;
     left: 0;
 }
 
 mat-drawer {
-
-        width: 20%;
+        min-height: 100vh;
+        min-width: 25%;
 
         .sider {
-            padding-top: 20px;
+            padding-top: 100px;
             height: auto;
             margin: 0 auto;
             display: flex;
@@ -30,7 +30,7 @@ mat-drawer {
                 margin-top: 1em;
             }
             .name {
-                padding-top: 0.7em
+                padding-top: 2em
             }
             .email {
                 padding: 0 0.5em
@@ -38,6 +38,10 @@ mat-drawer {
         }
     }
 
+    mat-drawer-content {
+        position: relative;
+        min-height: 100vh;
+    }
     h2 {
         margin: 13px 0 0 20px;
     }
@@ -45,3 +49,44 @@ mat-drawer {
     .mod {
         margin-bottom: 0.7em;
     }
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(20%, 2%);
+    z-index: 9999;
+    width: 300px;
+    height: 200px;
+    color: black;
+    box-shadow: 0 1px 1px 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    .head{
+        margin-top: 50px;
+    }
+    p {
+        font-size: small;
+        color: #675b5b;
+        margin-bottom: 40px;
+    }
+    button {
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+}
+span {
+    position: relative;
+    top: -20px;
+    left: 98.5%;
+    z-index: 2;
+}

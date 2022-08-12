@@ -1,6 +1,13 @@
-<app-post-card
-  *ngFor="let post of myPosts; index as i"
-  [p]="post"
-  (shotId)="deletePost($event)"
-  (shotobj)="modify($event)"
-></app-post-card>
+<div>
+  <div *ngIf="voidPosts" class="postVuoti">
+    <h2 class="text-center">
+      Ci dispiace, non hai ancora pubblicato dei posts ;(
+    </h2>
+  </div>
+  <app-post-card
+    *ngFor="let post of myPosts; index as i"
+    [p]="post"
+    (shotId)="deletePost($event)"
+    (shotobj)="modify($event)"
+  ></app-post-card>
+</div>

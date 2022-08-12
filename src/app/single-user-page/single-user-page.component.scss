@@ -1,0 +1,27 @@
+.all {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  .profile {
+    width: 50%;
+    border: 1px solid whitesmoke;
+
+      border: 1px solid whitesmoke;
+      .siderx {
+        padding-top: 4em;
+        text-align: center;
+
+        .actions {
+          button {
+            margin: 1em;
+          }
+        }
+      }
+
+  }
+  .post-card {
+    width: 100%;
+  }
+
+}
+

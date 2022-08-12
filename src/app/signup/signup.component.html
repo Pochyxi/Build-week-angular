@@ -1,57 +1,75 @@
 <div class="container w-50 p-3 mt-5">
   <form [formGroup]="form" (ngSubmit)="signup()">
-    <label class="form-label" for="nome">Nome</label>
-    <input
-      class="form-control"
-      formControlName="nome"
-      type="text"
-      id="nome"
-      placeholder="inserisci il tuo nome"
-    /><br />
-    <label class="form-label" for="username">Username</label>
-    <input
-      class="form-control"
-      formControlName="username"
-      type="text"
-      id="username"
-      placeholder="Username"
-    /><br />
-    <label class="form-label" for="eta">La tua età</label>
-    <input
-      class="form-control"
-      formControlName="eta"
-      type="number"
-      id="eta"
-      placeholder="Età"
-    /><br />
-    <label class="form-label" for="email">Email</label>
-    <input
-      class="form-control"
-      formControlName="email"
-      type="email"
-      id="email"
-      placeholder="email"
-    /><br />
-    <label class="form-label" for="password">Password</label>
-    <input
-      class="form-control"
-      formControlName="password"
-      type="password"
-      id="password"
-      placeholder="Password"
-    /><span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long. </span
-    ><br />
-    <label class="form-label" for="conferma">Conferma password</label>
-    <input
-      class="form-control"
-      formControlName="conferma"
-      type="password"
-      id="conferma"
-      placeholder="Conferma"
-    /><span id="passwordHelpInline" class="form-text">
-      Must be 8-20 characters long. </span
-    ><br />
-    <button class="btn btn-success w-100" type="submit">Registrati</button>
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" required />
+      <mat-error>{{ getErrorMessage("nome") }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required />
+      <mat-error>{{ getErrorMessage("username") }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Età</mat-label>
+      <input matInput type="number" formControlName="eta" required />
+      <mat-error>{{ getErrorMessage("eta") }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error>{{ getEmailError() }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+        required
+      />
+      <button
+        mat-icon-button
+        type="button"
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error>{{ getErrorMessage("password") }}</mat-error>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Conferma password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="conferma"
+        required
+        (focusout)="spanFlag = true"
+      />
+      <button
+        mat-icon-button
+        type="button"
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error>{{ getPassError() }}</mat-error>
+      <span class="spanError" *ngIf="spanFlag">{{ getSpanError() }}</span>
+    </mat-form-field>
+    <br />
+    <button mat-raised-button color="primary" class="w-100" type="submit">
+      Registrati
+    </button>
   </form>
 </div>

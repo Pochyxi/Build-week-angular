@@ -1,15 +1,13 @@
 .example-accordion {
-    display: block;
-    max-width: 500px;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
   }
 
   .example-accordion-item {
+    margin: 1em;
     display: block;
     border: solid 1px #ccc;
-  }
-
-  .example-accordion-item + .example-accordion-item {
-    border-top: none;
   }
 
   .example-accordion-item-header {

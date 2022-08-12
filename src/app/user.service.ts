@@ -20,8 +20,14 @@ export class UserService {
   getUsers() {
     return this.http.get<User[]>(this.url);
   }
+  getSingleUser(id: number) {
+    return this.http.get<User>('http://localhost:3000/users/' + id);
+  }
 
   modifyUsers(obj: any) {
     return this.http.patch<User>(this.url + obj.id, obj);
+  }
+  deleteUsers(id: string | number | null) {
+    return this.http.delete<User>(this.url + id);
   }
 }

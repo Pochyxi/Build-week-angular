@@ -1,8 +1,30 @@
-<nav class="navbar bg-light fixed-top">
+<nav id="navbar" class="navbar bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{ userName }}</a>
+    <a id="nomeUtente" class="navbar-brand" href="#">{{ me.username }}</a>
+    <a class="trigger" [matMenuTriggerFor]="menu">
+      Followers: {{ followers.length }}</a
+    >
+    <a id="followed" class="trigger" [matMenuTriggerFor]="menu1">
+      Followed: {{ followed.length }}
+    </a>
+    <mat-menu #menu1="matMenu" class="mt-4 pt-3 text-center">
+      <div class="followItem" *ngFor="let f of followed">
+        <a class="d-block follows" [routerLink]="['/user/', f.id]">{{
+          f.username
+        }}</a>
+      </div>
+    </mat-menu>
+    <mat-menu #menu="matMenu" class="mt-4 pt-3 text-center">
+      <a
+        [routerLink]="['/user/', f.id]"
+        class="followItem d-block follows"
+        *ngFor="let f of followers"
+        >{{ f.username }}</a
+      >
+    </mat-menu>
 
     <button
+      id="button"
       mat-mini-fab
       color="primary"
       aria-label="Example icon button with a menu icon"
@@ -12,11 +34,11 @@
       data-bs-target="#offcanvasNavbar"
       aria-controls="offcanvasNavbar"
     >
-      <mat-icon id="materialIcon">menu</mat-icon>
+      <mat-icon color="primary" id="materialIcon">menu</mat-icon>
     </button>
 
     <div
-      class="offcanvas offcanvas-end"
+      class="offcanvas offcanvas-end white-bg"
       tabindex="-1"
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
@@ -41,14 +63,30 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="['/']"
+            <a
+              class="nav-link active"
+              aria-current="page"
+              [routerLink]="['/']"
+              [routerLinkActive]="['select']"
+              [routerLinkActiveOptions]="{ exact: true }"
               >Home</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link active"
+              [routerLink]="['/trends']"
+              [routerLinkActive]="['select']"
+              aria-current="page"
+              *ngIf="isLogged"
+              >Trends</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
               [routerLink]="['/signup']"
+              [routerLinkActive]="['select']"
               aria-current="page"
               *ngIf="!isLogged"
               >Signup</a
@@ -58,6 +96,7 @@
             <a
               class="nav-link active"
               [routerLink]="['/login']"
+              [routerLinkActive]="['select']"
               aria-current="page"
               *ngIf="!isLogged"
               >Login</a
@@ -67,6 +106,7 @@
             <a
               class="nav-link active"
               [routerLink]="['/profile']"
+              [routerLinkActive]="['select']"
               aria-current="page"
               *ngIf="isLogged"
               >Profile</a
@@ -76,6 +116,7 @@
             <a
               class="nav-link active"
               [routerLink]="['/myposts']"
+              [routerLinkActive]="['select']"
               aria-current="page"
               *ngIf="isLogged"
               >MyPosts</a
@@ -83,7 +124,18 @@
           </li>
           <li class="nav-item">
             <a
+              class="nav-link active"
+              [routerLink]="['/followed-posts']"
+              [routerLinkActive]="['select']"
               aria-current="page"
+              *ngIf="isLogged"
+              >Followed</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a
+              aria-current="page"
+              [routerLinkActive]="['select']"
               class="nav-link active"
               (click)="logout()"
               *ngIf="isLogged"

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../users';
-
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,14 +11,19 @@ import { User } from '../users';
 })
 export class ProfileComponent implements OnInit {
   modify: boolean = false;
-
+  deleteFlag: boolean = false;
   myProfile: any = '';
 
   userId: string | null | number = localStorage.getItem('id');
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
-  constructor(private user$: UserService, private fb: FormBuilder) {
+  constructor(
+    private user$: UserService,
+    private fb: FormBuilder,
+    private router: Router,
+    private auth$: AuthService
+  ) {
     this.firstFormGroup = this.fb.group({
       firstCtrl: ['', Validators.required],
     });
@@ -49,6 +55,14 @@ export class ProfileComponent implements OnInit {
     console.log(obj);
     this.user$.modifyUsers(obj).subscribe((user) => {
       this.myProfile = user;
+    });
+  }
+
+  deleteUser() {
+    let id = localStorage.getItem('id');
+    this.user$.deleteUsers(id).subscribe(() => {
+      this.auth$.logout();
+      this.router.navigate(['/signup']);
     });
   }
 }
